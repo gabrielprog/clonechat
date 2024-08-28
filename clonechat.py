@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from utils.logger import *
 import argparse
 import json
 import os
@@ -682,4 +683,7 @@ else:
 
 CACHE_FILE = get_task_file(ORIGIN_CHAT_TITLE, destination_chat)
 
-main()
+try:
+    main()
+except Exception as e:
+    error(str(e))
